@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Người làm việc với màn rời cần soi kỹ cổng Type-C có DP Alt Mode</title>
+<meta name="description" content="Lỗ cắm Type-C trên mọi máy tính nhìn ngoài đều giống hệt nhau, nhưng phần mạch bên trong lại khác một trời một vực giữa phân khúc phổ thông và cao cấp...">
+<link rel="canonical" href="https://meo-laptop-vn.github.io/bai-viet/nguoi-lam-viec-voi-man-roi-can-soi-ky-cong-type-c-co-dp-alt-mode/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css?v=a665b222">
+<!--seo-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Người làm việc với màn rời cần soi kỹ cổng Type-C có DP Alt Mode">
+<meta property="og:description" content="Lỗ cắm Type-C trên mọi máy tính nhìn ngoài đều giống hệt nhau, nhưng phần mạch bên trong lại khác một trời một vực giữa phân khúc phổ thông và cao cấp...">
+<meta property="og:url" content="https://meo-laptop-vn.github.io/bai-viet/nguoi-lam-viec-voi-man-roi-can-soi-ky-cong-type-c-co-dp-alt-mode/">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Mẹo laptop hằng ngày">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Người làm việc với màn rời cần soi kỹ cổng Type-C có DP Alt Mode", "description": "Lỗ cắm Type-C trên mọi máy tính nhìn ngoài đều giống hệt nhau, nhưng phần mạch bên trong lại khác một trời một vực giữa phân khúc phổ thông và cao cấp...", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "inLanguage": "vi", "mainEntityOfPage": "https://meo-laptop-vn.github.io/bai-viet/nguoi-lam-viec-voi-man-roi-can-soi-ky-cong-type-c-co-dp-alt-mode/", "author": {"@type": "Organization", "name": "Mẹo laptop hằng ngày"}, "publisher": {"@type": "Organization", "name": "Mẹo laptop hằng ngày"}}</script>
+<!--/seo-->
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua đến nội dung</a>
+<header class="top"><div class="wrap mast"><a class="brand" href="../../"><span class="mark" aria-hidden="true">M</span><span class="bn">Mẹo laptop hằng ngày</span></a><p class="tag">Sổ tay mẹo vặt của Lan</p></div><nav class="nav" aria-label="Chính"><div class="wrap"><a href="../../">Trang chủ</a><a href="../../#chu-de-thiet-lap">Thiết lập Windows</a><a href="../../#chu-de-phu-kien">Phụ kiện</a><a href="../../#chu-de-ho-tro">Hỗ trợ người thân</a><a href="../../#ve-blog">Về blog</a></div></nav></header>
+<div class="wrap lay"><main id="main" class="col post">
+<p class="crumb"><a href="../../">Trang chủ</a><span aria-hidden="true"> / </span><span>Thiết lập Windows</span></p>
+<article>
+
+<h1>Người làm việc với màn rời cần soi kỹ cổng Type-C có DP Alt Mode</h1>
+<p>Lỗ cắm Type-C trên mọi máy tính nhìn ngoài đều giống hệt nhau, nhưng phần mạch bên trong lại khác một trời một vực giữa phân khúc phổ thông và cao cấp. Cổng Type-C muốn xuất hình ra màn rời bắt buộc phải có tính năng DisplayPort Alt Mode (DP Alt Mode) – cơ chế mượn 4 cặp dây truyền dữ liệu tốc độ cao để chạy tín hiệu hình ảnh và âm thanh của DisplayPort.</p>
+<p>Để biết cổng Type-C trên máy có xuất hình được hay không, bạn mở bảng cấu hình kỹ thuật của hãng (như trang PSREF của Lenovo) tìm dòng chữ DisplayPort kèm phiên bản 1.2, 1.4 hoặc 2.1. Nếu tài liệu chỉ ghi USB truyền dữ liệu hoặc sạc pin, cổng đó hoàn toàn không có đường dây nối tới chip đồ họa.</p>
+<p>Mua nhầm chiếc laptop không hỗ trợ xuất hình qua Type-C sẽ làm bạn tốn thêm một khoản tiền đổi máy hoặc mua adapter chuyển đổi cồng kềnh. Dưới đây là sổ tay ghi lại các sự cố phổ biến kèm cách kiểm tra từng bước trước khi bạn chi tiền mua máy hay phụ kiện.</p>
+<h2 id="cam-day-type-c-vua-khit-nhung-man-hinh-bao-khong-co-tin-hieu">Cắm dây Type-C vừa khít nhưng màn hình báo không có tín hiệu</h2>
+<ul>
+<li><strong>Kiểm tra gì trước</strong>: Soi lại tài liệu cổng của máy. Theo VESA, hai thiết bị phải trao đổi qua USB Power Delivery theo trình tự Discover SVIDs, Enter Mode rồi Status Update qua chân CC, đồng thời kênh phụ AUX phải chạy qua hai chân SBU1 và SBU2. Nếu bo mạch của laptop thiếu chip chuyển mạch hoặc không đi dây tới chip đồ họa, màn hình sẽ hoàn toàn không nhận được tín hiệu dù đầu cáp cắm rất chặt.</li>
+<li><strong>Làm gì sau</strong>: Đọc kỹ thông số cổng trước khi mua thêm đồ. Bạn có thể tra cứu hướng dẫn nhận diện trên <a href="https://laptopspot.vn/displayport-alt-mode-la-gi-cong-type-c-xuat-hinh/"><strong>LaptopSpot</strong></a> để phân biệt cổng dữ liệu thường với cổng xuất hình thực thụ. Nếu máy thuộc phân khúc giá rẻ chỉ có cổng USB-C truyền dữ liệu, bạn nên cắm qua cổng HDMI có sẵn thay vì tốn tiền mua cáp Type-C xịn.</li>
+</ul>
+<h2 id="man-hinh-roi-len-hinh-nhung-tan-so-quet-bi-khoa-o-muc-thap">Màn hình rời lên hình nhưng tần số quét bị khóa ở mức thấp</h2>
+<ul>
+<li><strong>Kiểm tra gì trước</strong>: Xem phiên bản DisplayPort của cổng Type-C và cổng vào màn hình. Mỗi thế hệ có mức trần băng thông riêng: DP 1.2 đạt 5,4 Gbps mỗi làn (tổng 4 làn là 21,6 Gbps), DP 1.4 nâng lên 8,1 Gbps mỗi làn (tổng 32,4 Gbps), còn DP 2.0 hoặc DP 2.1 chạm ngưỡng UHBR10 (40 Gbps), UHBR13.5 (54 Gbps) và UHBR20 (80 Gbps). Khi kết nối, hai bên sẽ tự động chạy theo chuẩn của thiết bị thấp hơn.</li>
+<li><strong>Nhược điểm thực tế</strong>: Chuẩn DP 1.x dùng cơ chế mã hoá 8b/10b làm mất toi 20% băng thông vào phần mã hoá dữ liệu. Cổng DP 1.4 dù ghi tốc độ thô 32,4 Gbps nhưng tải hữu ích thật chỉ còn 25,92 Gbps. Nếu bạn dùng màn hình độ phân giải cao mà máy chỉ hỗ trợ DP 1.2, liên kết chỉ đủ tải 4K ở 30Hz hoặc hai màn 1080p, gây giật lag khi làm việc.</li>
+<li><strong>Làm gì sau</strong>: So sánh bảng thông số giữa laptop và màn hình rời trước khi xuống tiền mua. Nếu cần xuất màn hình 4K 60Hz hay 5K 60Hz, chiếc laptop bạn chọn bắt buộc phải có cổng ghi rõ chuẩn DisplayPort 1.4 trở lên.</li>
+</ul>
+<h2 id="cam-qua-dock-da-nang-thi-do-phan-giai-tut-hoac-chuot-phim-bi-tre">Cắm qua dock đa năng thì độ phân giải tụt hoặc chuột phím bị trễ</h2>
+<ul>
+<li><strong>Kiểm tra gì trước</strong>: Xem dock đang chia 4 làn tốc độ cao (SSTX1, SSRX1, SSTX2, SSRX2) như thế nào. VESA có hai cách phân bổ: dành trọn 4 làn cho đường hình DisplayPort, hoặc chia đôi gồm 2 làn cho hình và 2 làn cho dữ liệu SuperSpeed USB.</li>
+<li><strong>Nhược điểm thực tế</strong>: Khi dock chia đôi dây để cắm cùng lúc USB, băng thông hình ảnh giảm đúng một nửa. Với cổng DP 1.4, 2 làn chỉ vừa đủ cho màn 4K 60Hz, không thể gánh màn hình 5K 60Hz.</li>
+<li><strong>Làm gì sau</strong>: Muốn tận dụng tối đa chất lượng hiển thị, bạn nên cắm dây màn hình vào một cổng Type-C riêng, để dành cổng còn lại cho dock chuột phím. Khi chọn mua cáp Type-C sang DisplayPort rời, hãy tìm sợi cáp có logo VESA chuẩn như DP8K (chạy đủ 4 làn HBR3) hoặc DP80 (chạy UHBR20) để tránh lãng phí tiền vào cáp kém chất lượng.</li>
+</ul>
+<p>Liệu chiếc laptop phân khúc tầm trung bạn đang ngắm có ghi rõ cổng Type-C hỗ trợ DisplayPort 1.4 hay nhà sản xuất vẫn giấu kín phiên bản thực tế của nó?</p>
+<p class="gia">Đăng ngày 11/11/2026</p>
+</article>
+<!--related-->
+<aside class="lq">
+<h2 class="lq-t">Bài cùng chủ đề</h2>
+<ul>
+<li><a href="../huong-dan-nguoi-than-dung-laptop-tu-xa-quick-assist-va-cai-dat-de-doc/">Hướng dẫn người thân dùng laptop từ xa - Quick Assist và cài đặt dễ đọc</a></li>
+<li><a href="../bo-phu-kien-hoc-thiet-ke-tren-laptop-bang-ve-numpad-canva/">Bộ phụ kiện học thiết kế trên laptop - bảng vẽ, phím số và Canva</a></li>
+</ul>
+</aside>
+<!--/related-->
+</main>
+<aside class="side"><section class="w w-about"><span class="av" aria-hidden="true">L</span><h2 class="w-t">Lan</h2><p>Mình ghi lại các mẹo dùng laptop Windows 11, viết từng bước và có bảng đối chiếu.</p><a class="more" href="../../#ve-blog">Về blog</a></section><section class="w w-cats"><h2 class="w-t">Chủ đề</h2><ul><li><a href="../../#chu-de-thiet-lap"><span>Thiết lập Windows</span></a></li><li><a href="../../#chu-de-phu-kien"><span>Phụ kiện</span></a></li><li><a href="../../#chu-de-ho-tro"><span>Hỗ trợ người thân</span></a></li></ul></section></aside></div>
+<footer class="foot"><div class="wrap fo"><p class="fn">Mẹo laptop hằng ngày</p><p>Blog cá nhân của Lan, ghi lại mẹo dùng laptop Windows 11 cho máy đời 2025 và 2026.</p><p class="sm">Năm 2026. Nội dung viết lại từ tài liệu công khai.</p></div></footer>
+</body>
+</html>
