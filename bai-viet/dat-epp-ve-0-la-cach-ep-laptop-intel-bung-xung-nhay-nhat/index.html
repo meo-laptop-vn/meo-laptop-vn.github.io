@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Đặt EPP về 0 là cách ép laptop Intel bung xung nhạy nhất</title>
+<meta name="description" content="Speed Shift (tên kỹ thuật là Intel HWP) là cơ chế trao quyền cho chính bộ xử lý tự tăng giảm xung nhịp, thay vì chờ hệ điều hành Windows tính toán rồi ra...">
+<link rel="canonical" href="https://meo-laptop-vn.github.io/bai-viet/dat-epp-ve-0-la-cach-ep-laptop-intel-bung-xung-nhay-nhat/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css?v=a665b222">
+<!--seo-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Đặt EPP về 0 là cách ép laptop Intel bung xung nhạy nhất">
+<meta property="og:description" content="Speed Shift (tên kỹ thuật là Intel HWP) là cơ chế trao quyền cho chính bộ xử lý tự tăng giảm xung nhịp, thay vì chờ hệ điều hành Windows tính toán rồi ra...">
+<meta property="og:url" content="https://meo-laptop-vn.github.io/bai-viet/dat-epp-ve-0-la-cach-ep-laptop-intel-bung-xung-nhay-nhat/">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Mẹo laptop hằng ngày">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Đặt EPP về 0 là cách ép laptop Intel bung xung nhạy nhất", "description": "Speed Shift (tên kỹ thuật là Intel HWP) là cơ chế trao quyền cho chính bộ xử lý tự tăng giảm xung nhịp, thay vì chờ hệ điều hành Windows tính toán rồi ra...", "datePublished": "2026-11-16", "dateModified": "2026-11-16", "inLanguage": "vi", "mainEntityOfPage": "https://meo-laptop-vn.github.io/bai-viet/dat-epp-ve-0-la-cach-ep-laptop-intel-bung-xung-nhay-nhat/", "author": {"@type": "Organization", "name": "Mẹo laptop hằng ngày"}, "publisher": {"@type": "Organization", "name": "Mẹo laptop hằng ngày"}}</script>
+<!--/seo-->
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua đến nội dung</a>
+<header class="top"><div class="wrap mast"><a class="brand" href="../../"><span class="mark" aria-hidden="true">M</span><span class="bn">Mẹo laptop hằng ngày</span></a><p class="tag">Sổ tay mẹo vặt của Lan</p></div><nav class="nav" aria-label="Chính"><div class="wrap"><a href="../../">Trang chủ</a><a href="../../#chu-de-thiet-lap">Thiết lập Windows</a><a href="../../#chu-de-phu-kien">Phụ kiện</a><a href="../../#chu-de-ho-tro">Hỗ trợ người thân</a><a href="../../#ve-blog">Về blog</a></div></nav></header>
+<div class="wrap lay"><main id="main" class="col post">
+<p class="crumb"><a href="../../">Trang chủ</a><span aria-hidden="true"> / </span><span>Thiết lập Windows</span></p>
+<article>
+
+<h1>Đặt EPP về 0 là cách ép laptop Intel bung xung nhạy nhất</h1>
+<p>Speed Shift (tên kỹ thuật là Intel HWP) là cơ chế trao quyền cho chính bộ xử lý tự tăng giảm xung nhịp, thay vì chờ hệ điều hành Windows tính toán rồi ra lệnh như thời SpeedStep cũ. Đi kèm với cơ chế này là chỉ số EPP (Energy_Performance_Preference), một con số từ 0 đến 255 do Windows gửi xuống để gợi ý CPU: đặt về 0 thì máy ưu tiên tốc độ tối đa, đặt về 255 thì máy ưu tiên tiết kiệm pin, còn mức mặc định khi chưa can thiệp là 128.</p>
+<p>Bạn cần rà soát lại hai thông số này khi chiếc laptop Intel gặp hiện tượng lạ: máy chấm điểm hiệu năng đa nhân rất cao nhưng bấm mở cửa sổ ứng dụng lại khựng nửa nhịp, hoặc máy tụt pin quá nhanh khi chỉ lướt web nhẹ. Từ các dòng máy phổ thông chạy chip Core thế hệ 6 (Skylake) đến các mẫu cao cấp dùng Core Ultra dòng U/P hay Core Ultra 200S đều dùng cơ chế này để chia quyền xử lý.</p>
+<p>Dưới đây là sổ tay kiểm tra từng bước giúp bạn hiểu đúng và thiết lập lại Speed Shift trên máy:</p>
+<h2 id="1-kiem-tra-trang-thai-kich-hoat-cua-intel-hwp">1. Kiểm tra trạng thái kích hoạt của Intel HWP</h2>
+<p>Phần cứng chỉ tự chọn xung khi hệ thống ghi bit HWP_ENABLE vào thanh ghi IA32_PM_ENABLE. Khi bit này được bật, CPU sẽ bỏ qua hoàn toàn giao diện điều khiển cũ IA32_PERF_CTL. Bộ xử lý lúc này tự quyết định mức chạy dựa trên tải thực tế, nhiệt độ hiện tại cùng các giới hạn trần và sàn mà Windows đặt ra.</p>
+<h2 id="2-soi-5-truong-dieu-khien-windows-gui-xuong-cpu">2. Soi 5 trường điều khiển Windows gửi xuống CPU</h2>
+<p>Windows không ép CPU chạy ở một mức MHz cố định mà gửi 5 trường dữ liệu qua thanh ghi IA32_HWP_REQUEST cho từng luồng logic:</p>
+<ul>
+<li><strong>Minimum_Performance</strong>: mức sàn hiệu năng tối thiểu hệ điều hành muốn giữ.</li>
+<li><strong>Maximum_Performance</strong>: mức trần hiệu năng tối đa cho phép CPU chạy.</li>
+<li><strong>Desired_Performance</strong>: nếu để bằng 0 thì chip tự chọn mức chạy, đặt số khác 0 thì chế độ tự động tạm tắt.</li>
+<li><strong>Activity_Window</strong>: cửa sổ quan sát lịch sử tải, kéo dài từ 1 micro giây đến 1270 giây.</li>
+<li><strong>Energy_Performance_Preference (EPP)</strong>: gợi ý mức độ ưu tiên tốc độ hay pin.</li>
+</ul>
+<p>Theo tài liệu kỹ thuật được <a href="https://laptopspot.vn/speed-shift-la-gi-chi-so-epp-laptop-intel/"><strong>LaptopSpot</strong></a> phân tích, thang đo của Intel HWP là thang trừu tượng không có đơn vị MHz, tương đối tuyến tính với hiệu năng tác vụ số nguyên chứ không quy đổi thẳng ra con số GHz.</p>
+<h2 id="3-chinh-moc-epp-tu-0-den-255-theo-dung-viec-can-lam">3. Chỉnh mốc EPP từ 0 đến 255 theo đúng việc cần làm</h2>
+<p>Giá trị EPP tác động trực tiếp tới tốc độ tăng giảm hiệu năng của chip:</p>
+<ul>
+<li><strong>Mức 0</strong>: ép chip bung sức nhanh nhất có thể, xóa hẳn độ trễ khi mở tác vụ mới.</li>
+<li><strong>Mức 128 (80H)</strong>: mức mặc định nằm giữa thang để cân bằng tốc độ và điện năng.</li>
+<li><strong>Mức 255 (0FFH)</strong>: ghìm máy ăn ít điện nhất, giúp kéo dài thời gian sáng màn hình.</li>
+</ul>
+<p>Nếu dòng chip cũ không có trường EPP, hệ thống sẽ dùng thanh ghi IA32_ENERGY_PERF_BIAS với thang điểm cũ từ 0 đến 15.</p>
+<h2 id="4-nhan-biet-dau-hieu-may-da-nhan-lenh-chuan">4. Nhận biết dấu hiệu máy đã nhận lệnh chuẩn</h2>
+<p>Dấu hiệu xử lý xong không phải là nhìn xung nhịp ghìm chặt ở mức GHz cao nhất. Khi thiết lập chuẩn, máy phản hồi tức thì ngay lúc bấm chuột mở app, sau đó hạ nhiệt và hạ xung nhanh về các mốc Most Efficient hay Lowest được báo trong thanh ghi IA32_HWP_CAPABILITIES.</p>
+<p>Tuy vậy, Speed Shift có một nhược điểm cố hữu: theo tài liệu Intel SDM tập 3B, bit HWP_ENABLE chỉ ghi được đúng một lần duy nhất sau khi khởi động. Khi hệ thống đã bật nó lên, Windows hoàn toàn không thể tắt giữa chừng để quay về SpeedStep cũ, trừ khi bạn khởi động lại máy hoàn toàn. Cách sống chung hiệu quả là giữ nguyên Speed Shift và điều chỉnh giá trị EPP: kéo sát về 0 khi cắm sạc để máy phản hồi nhanh nhất, và chuyển lên gần 255 khi cần tối ưu pin mang ra ngoài.</p>
+<p class="gia">Đăng ngày 16/11/2026</p>
+</article>
+<!--related-->
+<aside class="lq">
+<h2 class="lq-t">Bài cùng chủ đề</h2>
+<ul>
+<li><a href="../huong-dan-nguoi-than-dung-laptop-tu-xa-quick-assist-va-cai-dat-de-doc/">Hướng dẫn người thân dùng laptop từ xa - Quick Assist và cài đặt dễ đọc</a></li>
+<li><a href="../bo-phu-kien-hoc-thiet-ke-tren-laptop-bang-ve-numpad-canva/">Bộ phụ kiện học thiết kế trên laptop - bảng vẽ, phím số và Canva</a></li>
+</ul>
+</aside>
+<!--/related-->
+</main>
+<aside class="side"><section class="w w-about"><span class="av" aria-hidden="true">L</span><h2 class="w-t">Lan</h2><p>Mình ghi lại các mẹo dùng laptop Windows 11, viết từng bước và có bảng đối chiếu.</p><a class="more" href="../../#ve-blog">Về blog</a></section><section class="w w-cats"><h2 class="w-t">Chủ đề</h2><ul><li><a href="../../#chu-de-thiet-lap"><span>Thiết lập Windows</span></a></li><li><a href="../../#chu-de-phu-kien"><span>Phụ kiện</span></a></li><li><a href="../../#chu-de-ho-tro"><span>Hỗ trợ người thân</span></a></li></ul></section></aside></div>
+<footer class="foot"><div class="wrap fo"><p class="fn">Mẹo laptop hằng ngày</p><p>Blog cá nhân của Lan, ghi lại mẹo dùng laptop Windows 11 cho máy đời 2025 và 2026.</p><p class="sm">Năm 2026. Nội dung viết lại từ tài liệu công khai.</p></div></footer>
+</body>
+</html>
