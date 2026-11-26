@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Infinity Fabric 2 GHz trên chip AMD laptop quyết định tốc độ iGPU</title>
+<meta name="description" content="Sao hai chiếc laptop cùng chạy chip AMD và lắp sẵn 16 GB RAM mà hiệu năng đồ họa tích hợp lại chênh nhau rõ rệt? Câu trả lời nằm ở đường truyền dữ liệu...">
+<link rel="canonical" href="https://meo-laptop-vn.github.io/bai-viet/infinity-fabric-2-ghz-tren-chip-amd-laptop-quyet-dinh-toc-do-igpu/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css?v=a665b222">
+<!--seo-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Infinity Fabric 2 GHz trên chip AMD laptop quyết định tốc độ iGPU">
+<meta property="og:description" content="Sao hai chiếc laptop cùng chạy chip AMD và lắp sẵn 16 GB RAM mà hiệu năng đồ họa tích hợp lại chênh nhau rõ rệt? Câu trả lời nằm ở đường truyền dữ liệu...">
+<meta property="og:url" content="https://meo-laptop-vn.github.io/bai-viet/infinity-fabric-2-ghz-tren-chip-amd-laptop-quyet-dinh-toc-do-igpu/">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Mẹo laptop hằng ngày">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Infinity Fabric 2 GHz trên chip AMD laptop quyết định tốc độ iGPU", "description": "Sao hai chiếc laptop cùng chạy chip AMD và lắp sẵn 16 GB RAM mà hiệu năng đồ họa tích hợp lại chênh nhau rõ rệt? Câu trả lời nằm ở đường truyền dữ liệu...", "datePublished": "2026-11-26", "dateModified": "2026-11-26", "inLanguage": "vi", "mainEntityOfPage": "https://meo-laptop-vn.github.io/bai-viet/infinity-fabric-2-ghz-tren-chip-amd-laptop-quyet-dinh-toc-do-igpu/", "author": {"@type": "Organization", "name": "Mẹo laptop hằng ngày"}, "publisher": {"@type": "Organization", "name": "Mẹo laptop hằng ngày"}}</script>
+<!--/seo-->
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua đến nội dung</a>
+<header class="top"><div class="wrap mast"><a class="brand" href="../../"><span class="mark" aria-hidden="true">M</span><span class="bn">Mẹo laptop hằng ngày</span></a><p class="tag">Sổ tay mẹo vặt của Lan</p></div><nav class="nav" aria-label="Chính"><div class="wrap"><a href="../../">Trang chủ</a><a href="../../#chu-de-thiet-lap">Thiết lập Windows</a><a href="../../#chu-de-phu-kien">Phụ kiện</a><a href="../../#chu-de-ho-tro">Hỗ trợ người thân</a><a href="../../#ve-blog">Về blog</a></div></nav></header>
+<div class="wrap lay"><main id="main" class="col post">
+<p class="crumb"><a href="../../">Trang chủ</a><span aria-hidden="true"> / </span><span>Thiết lập Windows</span></p>
+<article>
+
+<h1>Infinity Fabric 2 GHz trên chip AMD laptop quyết định tốc độ iGPU</h1>
+<p>Sao hai chiếc laptop cùng chạy chip AMD và lắp sẵn 16 GB RAM mà hiệu năng đồ họa tích hợp lại chênh nhau rõ rệt? Câu trả lời nằm ở đường truyền dữ liệu bên trong con chip chứ không chỉ ở dung lượng RAM.</p>
+<p><strong>Infinity Fabric</strong> là mạng liên kết nội bộ của AMD dùng để nối nhân CPU, nhân đồ họa Radeon, bộ điều khiển bộ nhớ và khối I/O. Thay vì nối thẳng từng cặp, mọi khối lớn đều cắm vào mạng này qua các cổng riêng để trao đổi dữ liệu. Trên dòng Ryzen AI 300 đời Strix Point, mạng này chạy tối đa 2 GHz theo xung nhịp riêng gọi là xung FCLK.</p>
+<p>Khi đi chọn mua laptop AMD dùng iGPU để làm việc hay chơi game nhẹ, bạn cần kiểm tra đường truyền này trước khi xuống tiền để tránh mua nhầm cấu hình bị nghẽn băng thông. Dưới đây là danh sách các bước cần rà soát theo thứ tự.</p>
+<h2 id="1-soi-cach-igpu-noi-vao-bo-nho">1. Soi cách iGPU nối vào bộ nhớ</h2>
+<p>Nhân đồ họa tích hợp không nối thẳng vào thanh RAM mà phải đi qua các cổng của Infinity Fabric. Trên dòng Strix Point, khối Radeon 890M (1024 nhân, đạt 3376 điểm Time Spy và 9145 điểm Fire Strike) nối vào chip qua bốn cổng, mỗi cổng rộng 32 byte mỗi chu kỳ. Số cổng và xung FCLK đặt ra trần phần cứng cho lượng dữ liệu mà iGPU nhận được mỗi giây.</p>
+<h2 id="2-kiem-tra-bo-ba-xung-fclk-uclk-va-mclk">2. Kiểm tra bộ ba xung FCLK, UCLK và MCLK</h2>
+<p>Theo tài liệu kỹ thuật của AMD, quanh bộ nhớ có ba mức xung cần để ý:</p>
+<ul>
+<li><strong>FCLK</strong>: xung của mạng Infinity Fabric.</li>
+<li><strong>UCLK</strong>: xung bộ điều khiển bộ nhớ bên trong chip.</li>
+<li><strong>MCLK</strong>: xung bộ nhớ của cả chip và thanh RAM.</li>
+</ul>
+<p>Ở đời Zen 4, AMD khuyên để FCLK tự động, giữ UCLK và MCLK chạy tỷ lệ 1:1. Tuy nhiên, nhược điểm thực tế trên laptop là nhiều mẫu mỏng nhẹ hàn chết RAM LPDDR5X lên bo mạch, tốc độ cố định sẵn và rất khó ép xung. Xung FCLK thực tế hoàn toàn do chip và BIOS của hãng sản xuất khóa sẵn, bạn không thể tự chỉnh tay thoải mái như máy bàn. Chẳng hạn, chip Ryzen AI 5 330 không hỗ trợ AMD EXPO, trong khi Ryzen AI 9 465 (10 nhân 20 luồng, TDP 28W) lại có. Chi tiết về cách đồng bộ các mức xung này bạn có thể xem thêm tại <a href="https://laptopspot.vn/infinity-fabric-la-gi-xung-fclk-chip-amd-laptop/"><strong>laptopspot.vn</strong></a> để đối chiếu trước khi chốt máy.</p>
+<h2 id="3-phan-biet-chip-don-khoi-va-chiplet-qua-package-die-count">3. Phân biệt chip đơn khối và chiplet qua Package Die Count</h2>
+<p>Trên bảng thông số của AMD có mục <strong>Package Die Count</strong> chỉ số mảnh silicon trong một gói chip:</p>
+<ul>
+<li>Ghi số <strong>1</strong> (như Ryzen AI 5 330, Ryzen 7 250 hay Ryzen AI 9 465): CPU, iGPU và bộ điều khiển bộ nhớ nằm chung một khối, Infinity Fabric chạy hoàn toàn bên trong mảnh silicon đó.</li>
+<li>Ghi số <strong>3</strong> (như Ryzen 9 8940HX 16 nhân 32 luồng, TDP 55W): chip dùng thiết kế chiplet tách rời khối nhân CPU và khối I/O.</li>
+</ul>
+<p>Nếu đã kiểm tra đủ ba bước trên — xác định đúng loại RAM hàn hay nâng cấp được, xem chip có hỗ trợ EXPO không và nắm rõ cấu trúc đơn khối hay chiplet — bạn đã loại bỏ được rủi ro mua hớ vì nghẽn băng thông.</p>
+<p>Ở phân khúc laptop phổ thông đến trung cấp dùng đồ họa tích hợp, tốc độ RAM đi kèm và giới hạn BIOS của hãng mới là thứ khóa chặt sức mạnh của Infinity Fabric, chứ không phải cứ thấy tên chip đời mới là hiệu năng iGPU mặc định sẽ cao.</p>
+<p class="gia">Đăng ngày 26/11/2026</p>
+</article>
+<!--related-->
+<aside class="lq">
+<h2 class="lq-t">Bài cùng chủ đề</h2>
+<ul>
+<li><a href="../huong-dan-nguoi-than-dung-laptop-tu-xa-quick-assist-va-cai-dat-de-doc/">Hướng dẫn người thân dùng laptop từ xa - Quick Assist và cài đặt dễ đọc</a></li>
+<li><a href="../bo-phu-kien-hoc-thiet-ke-tren-laptop-bang-ve-numpad-canva/">Bộ phụ kiện học thiết kế trên laptop - bảng vẽ, phím số và Canva</a></li>
+</ul>
+</aside>
+<!--/related-->
+</main>
+<aside class="side"><section class="w w-about"><span class="av" aria-hidden="true">L</span><h2 class="w-t">Lan</h2><p>Mình ghi lại các mẹo dùng laptop Windows 11, viết từng bước và có bảng đối chiếu.</p><a class="more" href="../../#ve-blog">Về blog</a></section><section class="w w-cats"><h2 class="w-t">Chủ đề</h2><ul><li><a href="../../#chu-de-thiet-lap"><span>Thiết lập Windows</span></a></li><li><a href="../../#chu-de-phu-kien"><span>Phụ kiện</span></a></li><li><a href="../../#chu-de-ho-tro"><span>Hỗ trợ người thân</span></a></li></ul></section></aside></div>
+<footer class="foot"><div class="wrap fo"><p class="fn">Mẹo laptop hằng ngày</p><p>Blog cá nhân của Lan, ghi lại mẹo dùng laptop Windows 11 cho máy đời 2025 và 2026.</p><p class="sm">Năm 2026. Nội dung viết lại từ tài liệu công khai.</p></div></footer>
+</body>
+</html>
