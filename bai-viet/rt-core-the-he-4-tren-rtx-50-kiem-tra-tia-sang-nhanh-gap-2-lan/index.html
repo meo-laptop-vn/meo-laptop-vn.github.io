@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RT Core thế hệ 4 trên RTX 50 kiểm tra tia sáng nhanh gấp 2 lần</title>
+<meta name="description" content="So với việc bắt GPU thường tự tính đường đi ánh sáng bằng lệnh shader chậm chạp, RT Core là khối phần cứng nằm riêng trong mỗi cụm xử lý SM của GPU NVIDIA...">
+<link rel="canonical" href="https://meo-laptop-vn.github.io/bai-viet/rt-core-the-he-4-tren-rtx-50-kiem-tra-tia-sang-nhanh-gap-2-lan/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../style.css?v=a665b222">
+<!--seo-->
+<meta property="og:type" content="article">
+<meta property="og:title" content="RT Core thế hệ 4 trên RTX 50 kiểm tra tia sáng nhanh gấp 2 lần">
+<meta property="og:description" content="So với việc bắt GPU thường tự tính đường đi ánh sáng bằng lệnh shader chậm chạp, RT Core là khối phần cứng nằm riêng trong mỗi cụm xử lý SM của GPU NVIDIA...">
+<meta property="og:url" content="https://meo-laptop-vn.github.io/bai-viet/rt-core-the-he-4-tren-rtx-50-kiem-tra-tia-sang-nhanh-gap-2-lan/">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:site_name" content="Mẹo laptop hằng ngày">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "RT Core thế hệ 4 trên RTX 50 kiểm tra tia sáng nhanh gấp 2 lần", "description": "So với việc bắt GPU thường tự tính đường đi ánh sáng bằng lệnh shader chậm chạp, RT Core là khối phần cứng nằm riêng trong mỗi cụm xử lý SM của GPU NVIDIA...", "datePublished": "2026-11-27", "dateModified": "2026-11-27", "inLanguage": "vi", "mainEntityOfPage": "https://meo-laptop-vn.github.io/bai-viet/rt-core-the-he-4-tren-rtx-50-kiem-tra-tia-sang-nhanh-gap-2-lan/", "author": {"@type": "Organization", "name": "Mẹo laptop hằng ngày"}, "publisher": {"@type": "Organization", "name": "Mẹo laptop hằng ngày"}}</script>
+<!--/seo-->
+</head>
+<body>
+<a class="skip" href="#main">Bỏ qua đến nội dung</a>
+<header class="top"><div class="wrap mast"><a class="brand" href="../../"><span class="mark" aria-hidden="true">M</span><span class="bn">Mẹo laptop hằng ngày</span></a><p class="tag">Sổ tay mẹo vặt của Lan</p></div><nav class="nav" aria-label="Chính"><div class="wrap"><a href="../../">Trang chủ</a><a href="../../#chu-de-thiet-lap">Thiết lập Windows</a><a href="../../#chu-de-phu-kien">Phụ kiện</a><a href="../../#chu-de-ho-tro">Hỗ trợ người thân</a><a href="../../#ve-blog">Về blog</a></div></nav></header>
+<div class="wrap lay"><main id="main" class="col post">
+<p class="crumb"><a href="../../">Trang chủ</a><span aria-hidden="true"> / </span><span>Thiết lập Windows</span></p>
+<article>
+
+<h1>RT Core thế hệ 4 trên RTX 50 kiểm tra tia sáng nhanh gấp 2 lần</h1>
+<p>So với việc bắt GPU thường tự tính đường đi ánh sáng bằng lệnh shader chậm chạp, <strong>RT Core</strong> là khối phần cứng nằm riêng trong mỗi cụm xử lý SM của GPU NVIDIA RTX để gánh phần việc nặng của kỹ thuật dò tia (ray tracing). Nó làm hai việc chính: duyệt cây hộp bao BVH và kiểm tra xem tia sáng ảo có chạm vào tam giác nào trong cảnh 3D hay không.</p>
+<p>Khi cần bật bóng đổ, phản chiếu hay ánh sáng gián tiếp giống thật trong game hoặc phần mềm 3D, bạn mới cần tới khối này. Nếu thiếu phần cứng chuyên dụng, mỗi tia sáng phải chạy qua hàng nghìn khe lệnh phần mềm, khiến việc dò tia theo thời gian thực gần như bất khả thi.</p>
+<h2 id="danh-sach-kiem-tra-khi-chon-va-dung-laptop-co-rt-core">Danh sách kiểm tra khi chọn và dùng laptop có RT Core</h2>
+<p>Để không mua nhầm cấu hình yếu hoặc bật nhầm thiết lập làm tụt khung hình, mình ghi lại thứ tự các bước cần rà soát:</p>
+<p>Chỗ này <a href="https://www.reviewlaptop.vn/ryzen-9955hx3d-vs-ultra-285hx-game-dung-phim/"><strong>ReviewLaptop</strong></a> có phân tích riêng, đọc kèm sẽ rõ hơn vài chi tiết.</p>
+<p>1. <strong>Kiểm tra đúng thế hệ GPU RTX theo nhu cầu</strong>: Dòng RTX có 4 thế hệ RT Core tính từ kiến trúc Turing tới Blackwell. Trên laptop RTX 50 mới, thế hệ 4 cho tốc độ kiểm tra giao cắt tia với tam giác nhanh gấp 2 lần so với thế hệ 3. Nếu chỉ chơi game nhẹ hoặc làm đồ họa cơ bản ở phân khúc phổ thông, không nhất thiết phải cố lên đời mới nhất.</p>
+<p>2. <strong>Xem đủ bộ ba đơn vị xử lý trong SM</strong>: Một khung hình dò tia không chỉ có mình RT Core chạy. Trên kiến trúc Turing, mỗi SM gồm 64 CUDA core, 8 Tensor Core và 1 RT Core. RT Core lo phần hình học tia sáng, CUDA core lo tô màu sau khi biết tia chạm đâu, còn Tensor Core gánh phép toán ma trận cho AI như DLSS. Thiếu cân đối giữa ba phần này thì máy vẫn nghẽn.</p>
+<p>3. <strong>Hiểu cách cây BVH giảm tải cho máy</strong>: Thay vì bắt tia sáng thử từng tam giác một trong cả cảnh 3D, driver sẽ dựng cấu trúc BVH gồm các hộp bao lồng nhau từ lớn tới nhỏ. Tia đi từ nút gốc xuống, nhánh nào không chạm thì bỏ qua toàn bộ tam giác bên trong. Bạn có thể đọc thêm phần giải thích chi tiết về cấu trúc này trên <a href="https://laptopspot.vn/rt-core-la-gi-khoi-do-tia-tren-gpu-laptop-rtx/"><strong>LaptopSpot</strong></a> để hiểu vì sao chất lượng dựng cây ảnh hưởng thẳng tới độ mượt.</p>
+<p>4. <strong>Cập nhật driver thường xuyên</strong>: Việc dựng và cập nhật cây BVH do driver đảm nhận, còn ứng dụng lo sinh tia và tô màu. Driver cũ rất dễ làm bước duyệt cây kém hiệu quả, gây tụt khung hình dù phần cứng không yếu.</p>
+<p>5. <strong>Bật kèm tính năng hỗ trợ từ Tensor Core</strong>: Khi bật ray tracing nặng, hãy bật thêm các chế độ AI chạy trên Tensor Core để giảm tải cho phần tô màu của CUDA core.</p>
+<p>Dấu hiệu xử lý xong là khi bật dò tia ở mức thiết lập mong muốn, khung hình giữ ổn định mà không bị khựng hình mỗi khi xoay góc nhìn nhiều vật thể phản chiếu.</p>
+<h2 id="diem-yeu-lon-nhat-va-cach-song-chung">Điểm yếu lớn nhất và cách sống chung</h2>
+<p>Nhược điểm rõ nhất của việc dò tia trên laptop là khối lượng tính toán vẫn rất nặng nếu ứng dụng hoặc driver xử lý cây BVH chưa tối ưu, khiến SM dễ bị kéo vào chờ kết quả hoặc quá tải ở khâu tô màu bằng CUDA core. Cách sống chung thực tế nhất là không ép bật dò tia ở mức tối đa trên các mẫu laptop tầm trung, mà kết hợp bật tính năng AI trên Tensor Core và giữ driver luôn ở bản mới nhất để chia bớt gánh nặng cho GPU.</p>
+<p class="gia">Đăng ngày 27/11/2026</p>
+</article>
+<!--related-->
+<aside class="lq">
+<h2 class="lq-t">Bài cùng chủ đề</h2>
+<ul>
+<li><a href="../huong-dan-nguoi-than-dung-laptop-tu-xa-quick-assist-va-cai-dat-de-doc/">Hướng dẫn người thân dùng laptop từ xa - Quick Assist và cài đặt dễ đọc</a></li>
+<li><a href="../bo-phu-kien-hoc-thiet-ke-tren-laptop-bang-ve-numpad-canva/">Bộ phụ kiện học thiết kế trên laptop - bảng vẽ, phím số và Canva</a></li>
+</ul>
+</aside>
+<!--/related-->
+</main>
+<aside class="side"><section class="w w-about"><span class="av" aria-hidden="true">L</span><h2 class="w-t">Lan</h2><p>Mình ghi lại các mẹo dùng laptop Windows 11, viết từng bước và có bảng đối chiếu.</p><a class="more" href="../../#ve-blog">Về blog</a></section><section class="w w-cats"><h2 class="w-t">Chủ đề</h2><ul><li><a href="../../#chu-de-thiet-lap"><span>Thiết lập Windows</span></a></li><li><a href="../../#chu-de-phu-kien"><span>Phụ kiện</span></a></li><li><a href="../../#chu-de-ho-tro"><span>Hỗ trợ người thân</span></a></li></ul></section></aside></div>
+<footer class="foot"><div class="wrap fo"><p class="fn">Mẹo laptop hằng ngày</p><p>Blog cá nhân của Lan, ghi lại mẹo dùng laptop Windows 11 cho máy đời 2025 và 2026.</p><p class="sm">Năm 2026. Nội dung viết lại từ tài liệu công khai.</p></div></footer>
+</body>
+</html>
